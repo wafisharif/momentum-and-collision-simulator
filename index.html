@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Momentum & Collisions Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1 id="title">Momentum and Collision Simulator</h1>
+  
+  <div class="controls">
+    <div class="slider-container">
+      <label>Mass A: <span id="massA-val">2</span> kg</label>
+      <input type="range" id="massA" min="1" max="10" step="0.5" value="2">
+    </div>
+    <div class="slider-container">
+      <label>Velocity A: <span id="velA-val">2</span> m/s</label>
+      <input type="range" id="velA" min="-10" max="10" step="0.5" value="2">
+    </div>
+    <div class="slider-container">
+      <label>Mass B: <span id="massB-val">3</span> kg</label>
+      <input type="range" id="massB" min="1" max="10" step="0.5" value="3">
+    </div>
+    <div class="slider-container">
+      <label>Velocity B: <span id="velB-val">-1</span> m/s</label>
+      <input type="range" id="velB" min="-10" max="10" step="0.5" value="-1">
+    </div>
+  </div>
+
+  <div class="buttons-container">
+  <button id="launch">Launch</button>
+  <button id="reset">Reset</button>
+  <button id="toggle-explanation">ℹ️ Explanation</button>
+</div>
+
+<div id="explanation-panel" style="display:none;">
+  <button id="close-explanation" title="Close Explanation">✖</button>
+  <h2>Momentum and Collisions</h2>
+  <p>
+    This simulator demonstrates the principles of <strong>linear momentum</strong> and <strong>elastic collisions</strong> between two objects.
+  </p>
+  <p>
+    <strong>Momentum (p)</strong> is the product of an object's mass and velocity:<br/>
+    <code>p = m × v</code>
+  </p>
+  <p>
+    In an <em>isolated system</em>, total momentum is conserved:<br/>
+    <code>m₁v₁₁ + m₂v₂₁ = m₁v₁₂ + m₂v₂₂</code><br/>
+    where subscripts 1 and 2 refer to before and after the collision respectively.
+  </p>
+  <p>
+    This simulation models <strong>one-dimensional elastic collisions</strong>, where kinetic energy is also conserved. The velocities after collision are calculated using:
+  </p>
+  <p>
+    <code>
+      v₁₂ = ((m₁ - m₂) * v₁₁ + 2 * m₂ * v₂₁) / (m₁ + m₂)<br/>
+      v₂₂ = ((m₂ - m₁) * v₂₁ + 2 * m₁ * v₁₁) / (m₁ + m₂)
+    </code>
+  </p>
+  <p>
+    <strong>Kinetic Energy (KE)</strong> is given by:<br/>
+    <code>KE = 0.5 × m × v²</code><br/>
+    In elastic collisions, total KE before and after collision remains the same.
+  </p>
+  <p>
+    By adjusting the masses and velocities, you can observe how momentum and energy are exchanged between the objects during the collision.
+  </p>
+</div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
