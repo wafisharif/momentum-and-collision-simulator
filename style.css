@@ -1,0 +1,116 @@
+/* Use a nicer sans-serif font, fallback to Calibri or similar */
+body {
+  background-color: #0d0d0d;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the heading */
+#title {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 1.2px;
+  color: white;  /* changed from light blue */
+  text-shadow: none; /* remove glow */
+}
+
+/* Rest of your styles below */
+.controls {
+  padding: 15px;
+  background-color: #121212;
+  border-bottom: 2px solid #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ccc;
+}
+
+input[type="range"] {
+  width: 150px;
+}
+
+canvas {
+  display: block;
+  margin: 20px auto;
+  border: 1px solid #444;
+}
+
+.buttons-container {
+  margin: 20px auto 40px auto;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.buttons-container button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #333;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.buttons-container button:hover {
+  background-color: #555;
+}
+/* Labels for Object A sliders - red text */
+.slider-container:nth-child(1) label,
+.slider-container:nth-child(2) label {
+  color: #ff5555;  /* red */
+}
+
+/* Labels for Object B sliders - blue text */
+.slider-container:nth-child(3) label,
+.slider-container:nth-child(4) label {
+  color: #5599ff;  /* blue */
+}
+
+#explanation-panel {
+  max-width: 800px;
+  margin: 20px auto 40px auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #ddd;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  position: relative;
+}
+
+#close-explanation {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #ccc;
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#close-explanation:hover {
+  color: white;
+}
